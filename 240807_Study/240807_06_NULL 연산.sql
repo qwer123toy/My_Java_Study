@@ -1,0 +1,12 @@
+
+SELECT NULL;-- NULL값도 보유
+
+-- 모든 연산에서 NULL이 나오게 됨
+SELECT NULL = NULL;
+SELECT NULL + 1;
+SELECT NULL AND NULL;
+SELECT NULL > NULL;
+
+-- is 연산자를 통해 확인 가능
+SELECT NULL IS NULL;
+SELECT 'null 아님'  IS NOT NULL;
