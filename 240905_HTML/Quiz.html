@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myBtnMinus">minus</button>
+    <p id="myNum">0</p>
+    <button id="myBtnPlus">plus</button>
+  </body>
+  <script>
+    let myBtnPlus = window.document.querySelector("#myBtnPlus");
+    let myBtnMinus = window.document.querySelector("#myBtnMinus");
+
+    let plusNum = function (e) {
+      let numberP = document.querySelector("#myNum");
+      let currentValue = parseInt(numberP.textContent);
+      numberP.innerHTML = currentValue + 1;
+    };
+
+    let minusNum = function (e) {
+      let numberP = document.querySelector("#myNum");
+      let currentValue = parseInt(numberP.textContent);
+      numberP.innerHTML = currentValue - 1;
+    };
+
+    myBtnPlus.addEventListener("click", plusNum);
+    myBtnMinus.addEventListener("click", minusNum);
+  </script>
+</html>
+<!--
+    0. Javascript
+    1. 실행 환경은?
+    2. 컴파일 단계 없이 브라우저에서 실행가능한 이유는?
+    3. 문장을 웹문서 html에 포함시키는 방법은?
+    4. 변수 선언 키워드?
+    5. 자료형 종류?
+    6. 변수의 타입은 언제 결정되는가? 변수의 자료형을 확인할 수 있는 연산자?
+    7. 함수 선언 방법?
+    8. Hoisting?
+    9. callback 함수?
+    etc> Node.js는 무엇일까요?
+-->

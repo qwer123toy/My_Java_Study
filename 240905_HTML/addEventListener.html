@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼이에용</button>
+</body>
+<script>
+    //CSS 셀렉터 규칙과 동일
+    //파라미터 값으로 객체 입력
+    // document : 브라우저가 만들어지는 이 문서에 대한 객체
+    let myBtn = window.document.querySelector("#btn");
+    
+    console.log(myBtn.innerHTML);
+    myBtn.innerHTML = "내맘대로 바꾸기";
+    // myBtn.addEventListener("click",(e) => {
+    //     console.log("이벤트 처리가 콜백함수에서 정의한 대로 실행되어요");
+        
+    // });
+    myBtn.addEventListener("click", l);
+    
+    function l (e){
+        console.log("이벤트 처리가 콜백함수에서 정의한대로 실행되는 중");
+        
+    }
+</script>
+</html>
