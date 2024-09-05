@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 양식</title>
+</head>
+<body>
+    <form method="post">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name"> <!-- 태그에 id 속성값을 꼭 적어줘야 함 -->
+        <!-- 브라우저가 Label과 input 태그의 연관관계를 알게됨 -->
+
+         <label>패스워드 <input type="password" name="password"></label>
+         <!-- 아니면 input 태그를 label 안에 감싸는 방법도 있음 -->
+        <input type="submit" value="제출하기">
+    </form>
+</body>
+</html>

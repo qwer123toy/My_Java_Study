@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>옵션 리스트</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <lable for="pet-select">동물을 선택:</lable>
+                <select id="pet-select" name="pet">
+                    <option value="">동물을 선택하세요</option>
+                    <!--초기값을 보여주고 싶으면 value를 비워놓고 사용 가능-->
+                    <option value="cat">고양이</option>
+                    <option value="dog">강아지</option>
+                    <option value="duck">오리</option>
+                    <option value="rabbit">토끼</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="color-select">색상을 선택</label>
+                <input id="color-select" type="search" list="colors" name="color">
+                <datalist id="colors">
+                    <option value="red"></option>
+                    <option value="green"></option>
+                    <option value="blue"></option>
+
+                </datalist>
+            </div>
+
+            <input type="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 양식 연습</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            background-image: url("htmlimg.jpg");
+            /* viewport의 상대적인 크기를 사용할 수 있음 */
+            background-repeat: no-repeat; 
+            /* 반복되지 않도록 설정 */
+            background-position: center;
+            /* 영역의 가운데로 설정 */
+            background-size: contain;
+            /* 이미지를 다 나타내기 */
+            height: 100vh;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section{
+            background-color: rgba(100, 200, 30, 0.8);
+            border: 5px solid red;
+            box-shadow: 10px 10px 10px 10px wheat;
+            /* 그림자 만들기 오른쪽 위치, 아래쪽 위치, 블러값, 전체적 쉐도우 크기*/
+            height: 400px;
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            
+        }
+        label{
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <form>
+                <div>
+                    <label for="id">아이디</label>
+                    <input id="id" type="text" name="id" placeholder="myaccountid" required>
+                </div>
+                <div>
+                    <label for="pwd">패스워드</label>
+                    <input id="pwd" type="password" name="pwd" placeholder="mypassword" required>
+                </div>
+                <div>
+                    <input type="submit" value="제출하기">
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
