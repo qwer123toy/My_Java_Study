@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <dialog id="my-dialog" >
+        <div>다이얼로그</div>
+        <form method="dialog">
+            <input type="text" id="my-name">
+            <input type="submit" value="확인">
+            <input type="submit" value="취소">
+        </form>
+    </dialog>
+    <button id="open-dialog">다이얼로그</button>
+</body>
+<script>
+    let dialog = document.querySelector("#my-dialog");
+    let openDialog = document.querySelector("#open-dialog");
+
+    openDialog.addEventListener("click", () => {
+        dialog.showModal();// dialog의 open 특성을 활성화 시킴
+    }); 
+
+    dialog.addEventListener("close", () => {
+        if(dialog.returnValue === "확인") {
+           let name = document.querySelector("#my-name").value;
+           console.log(name);
+            
+        }
+        // console.log(dialog.returnValue);
+    });
+</script>
+</html>

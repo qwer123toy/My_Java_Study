@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+  </head>
+  <body></body>
+  <script>
+    const myArr = [];
+    console.log(myArr.length);
+
+    // 값을 추가함, 차례대로
+    myArr.push(100);
+    myArr.push(200);
+    myArr.push(300);
+    
+
+    // 가장 앞쪽에 원소값을 추가
+    myArr.unshift(1000);
+    myArr.unshift(2000);
+    myArr.unshift(3000);
+
+    console.log(myArr);
+
+    // 없는 index를 찾으면 undefined가 나옴
+    console.log(myArr[-1]); 
+
+    // 자릿수에 맞는 원소를 찾아옴
+    console.log(myArr.at(0));
+
+    //음수를 넣으면 역순으로 찾음, -1은 가장 마지막 원소
+    console.log(myArr.at(-1));
+    
+    
+    // //자바스크립트의 배열 길이는 동적임
+    // // 배열 길이를 조절 가능함
+    // myArr.length = 5;
+
+    // //동적으로 늘어난 길이의 배열 값을 출력함
+    // console.log(myArr);
+
+    // const yourArr = [];
+
+    // yourArr[0] = 100;
+    // yourArr[1] = 200;
+    // yourArr[2] = 300;
+    // yourArr[5] = 500;
+
+    // console.log(yourArr);
+  </script>
+</html>

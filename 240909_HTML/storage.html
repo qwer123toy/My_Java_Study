@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    
+</body>
+
+<script>
+    localStorage.setItem('name','John');
+    localStorage.setItem('age', 30);
+    localStorage.setItem('isAdmin', true);
+    let obj = {kor:100, eng:100, math:100};
+    let jsonString = JSON.stringify(obj);
+
+    localStorage.setItem('object', jsonString);
+    
+
+
+    // sessionStorage.setItem("name", "John");
+    // sessionStorage.setItem("age", 30);
+    // sessionStorage.setItem("isAdmin", true);
+    // sessionStorage.setItem("isLogin", false);
+    // sessionStorage.setItem("object", {kor:100, eng:100, math:100});
+    
+    
+
+
+
+    // console.log(sessionStorage.getItem("name"));
+
+    // sessionStorage.removeItem("name");
+
+    // console.log(sessionStorage.getItem("name"));
+
+    // sessionStorage.clear();
+
+</script>
+</html>

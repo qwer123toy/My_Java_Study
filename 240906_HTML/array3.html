@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+  </head>
+  <body></body>
+  <script>
+    const arr = [70, 30, 20, 10, 40, 50];
+
+    let index = arr.indexOf(40);
+    console.log(index);
+
+    //정렬 실행
+    // arr.sort();
+
+    //역순으로 자리바꾸기
+    // arr.reverse();
+
+    // // Comperator 방식을 활용한 역순 정렬 방식
+    // arr.sort(function (left, right) {
+    //   return right - left;
+    // });
+
+    let ordered = arr.toSorted(); // shallow copy
+    console.log(arr);
+    console.log(ordered);
+    
+    
+
+
+    console.log(arr);
+  </script>
+</html>

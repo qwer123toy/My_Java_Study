@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+        const myObj = {//인스턴스 생성
+        name : "둘리", //속성 정의(추가)
+        age : 15,
+        score : 100,
+        hello: function(){
+            console.log("hihi");
+            
+        },
+        introduce (){
+            // console.log("제이름은 " + this.name);
+            console.log(`제이름은 ${this.name}이고 ${this.age}살 입니다.`);
+            //문장에서 변수로 지정해주기 위해서는 `로 묶어준 뒤 ${}로 변수값 지정
+        }
+    };
+
+    console.log(myObj.name);
+    myObj.hello();
+    myObj.introduce();
+
+    const car = {maker : "Hyundai", model : "Sonata"};
+
+    myObj.ownCar = car;
+
+    console.log(myObj.ownCar.model);
+    
+    
+        
+  </script>
+</html>

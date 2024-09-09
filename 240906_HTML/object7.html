@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    class Human {
+      name;
+      age;
+
+      // 생성자: 객체가 생성될 때 name과 age를 초기화함.
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // printAll 메서드: 객체의 name과 age를 출력함.
+      printAll() {
+        console.log(this.name, this.age);
+      }
+
+      // toString 메서드: 객체를 문자열로 변환할 때 호출됨.
+      toString() {
+        return `이름 : ${this.name}, 나이 : ${this.age}`;
+      }
+
+      // valueOf 메서드: 객체를 숫자로 변환할 때 호출됨. 여기서는 age 값을 반환함.
+      valueOf() {
+        return this.age;
+      }
+    }
+
+    // Human 객체를 생성. 이름은 "둘리", 나이는 15로 설정됨.
+    let myObj = new Human("둘리", 15);
+
+    // printAll 메서드 호출: 이름과 나이를 출력.
+    myObj.printAll(); // "둘리 15" 출력
+
+    // 문자열과 객체를 더할 때, toString 메서드가 자동으로 호출되어 문자열로 변환됨.
+    console.log("문자열 " + myObj); // "문자열 이름 : 둘리, 나이 : 15" 출력
+
+    // 객체를 숫자 연산에 사용하면 valueOf 메서드가 호출되어 age 값을 반환함.
+    console.log(myObj - 0); // 15 출력
+
+    // toString 메서드를 직접 호출하여 객체의 문자열 표현을 출력.
+    console.log(myObj.toString()); // "이름 : 둘리, 나이 : 15" 출력
+
+    // 템플릿 리터럴 내에서 객체를 사용하면 toString 메서드가 자동으로 호출됨.
+    console.log(`toString 확인 = ${myObj}`); // "toString 확인 = 이름 : 둘리, 나이 : 15" 출력
+  </script>
+</html>

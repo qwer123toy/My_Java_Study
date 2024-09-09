@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <div class="container">
+        <ul class="list">
+
+        </ul>
+    </div>
+</body>
+<script>
+
+let container = document.querySelector(".container"); // .container 클래스를 가진 요소를 선택하여 container 변수에 할당
+let list = document.querySelector(".list"); // .list 클래스를 가진 요소를 선택하여 list 변수에 할당
+
+let li = document.createElement("li"); // 새로운 <li> 요소를 생성하여 li 변수에 할당
+li.innerText = "목록아이템1"; // li 요소의 텍스트 내용을 "목록아이템1"로 설정
+
+// 요소의 자식으로 추가됨
+list.append(li); // list 요소의 자식 요소로 li를 추가
+
+let li2 = document.createElement("li"); // 또 다른 <li> 요소를 생성하여 li2 변수에 할당
+li2.innerText = "목록아이템2"; // li2 요소의 텍스트 내용을 "목록아이템2"로 설정
+
+// 주석 처리된 코드들에 대한 설명:
+
+// list 요소의 맨 앞에 li2 요소를 자식으로 추가하는 코드
+// list.prepend(li2); 
+
+
+// li.after(li2); // li 요소 바로 다음에 li2 요소를 형제로 추가
+// li.before(li2); // li 요소 바로 앞에 li2 요소를 형제로 추가
+// li.replaceWith(li2); // li 요소를 li2 요소로 대체
+
+container.remove(); // container 요소를 DOM에서 제거하는 코드
+</script>
+</html>

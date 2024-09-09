@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+
+    <style>
+      .bold {
+        font-weight: bold;
+      }
+
+      .red{
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="list">
+        <li >1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+    <button id="boldBtn">홀수 번호를 "진하게" 토글 버튼</button>
+  </body>
+  <script>
+    let list = document.querySelector(".list");
+    let boldBtn = document.querySelector("#boldBtn");
+
+    function changeBold(e) {
+      
+      //listItem에서 몇번째 자식인지를 찾는 방식
+      //해당 괄호에 숫자 혹은 수식으로 표현 가능(1,2, 2n, 2n -1)
+      let odd = list.querySelectorAll("li:nth-child(2n -1)");
+      let arr = [...odd];
+
+      for (let elem of arr) {
+        elem.classList.toggle("bold");
+
+        //해당 요소의 형제가 존재하는지 찾음
+        if(elem.nextElementSibling){
+          //존재하면 그 형제 요소에 클래스를 추가
+          elem.nextElementSibling.classList.toggle("red");
+        }
+      } 
+      
+
+      // let children = [...list.children];
+      // for (let elem of children) {
+      //   //HTML의 클래스 속성에 접근하는 메서드 classList
+      //   // 토글은 해당 요소에 클래스가 없으면 추가해주고
+      //   // 있으면 제거해줌
+      //   elem.classList.toggle("bold");
+      //   elem.classList.toggle("red");
+      // }
+    }
+
+    boldBtn.addEventListener("click", changeBold);
+
+  </script>
+</html>

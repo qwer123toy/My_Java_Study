@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+  </head>
+  <body></body>
+  <script>
+    const arr = [70, 30, 20, 10, 40, 50];
+
+    // 0부터 4 앞까지 잘라줌
+    //시작 인덱스, 자르는 인덱스
+    // const s = arr.slice(0, 4);
+
+    // 3번 인덱스부터 끝까지
+    const s1 = arr.slice(3);
+    console.log(s1);
+
+    // 뒤에서 3번째 인덱스부터 끝까지
+    const s2 = arr.slice(-3);
+    console.log(s2);
+    // 첫번째 인자는 인덱스, 두번째 인자는 제거될 개수
+    // 제거된 원소를 반환함
+    // 0번째 인덱스부터 2개를 제거하여 s에 넣어줌
+    // 여러개를 자르는경우 반환 값도 배열이 됨
+    const s3 = arr.splice(0, 2);
+    console.log(arr);
+    console.log(s3);
+    // splice 함수에서 제거하고 난 뒤 값을 붙여주면
+    //  제거한 자리에 해당 값들을 추가해줌
+    const s4 = arr.splice(0, 2, "A", "B", "C");
+    console.log(s4);
+    console.log(arr);
+
+    
+    
+    
+    
+
+
+  </script>
+</html>
+

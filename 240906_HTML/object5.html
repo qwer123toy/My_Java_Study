@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    //함수이자 파라미터 값을 입력받아 변수를 들고있는 객체로 사용됨
+    function Cup(capacity) {
+      this.capacity = capacity;
+    }
+
+    // Cup 함수를 통해 객체를 생성
+    let myCup = new Cup(200);
+
+    //어떠한 값의 this.cpapcity라는 변수를 출력하는 함수
+    function printCapacity() {
+      console.log(this.capacity);
+    }
+
+    // 단독으로 printCapacity 함수를 호출하면,
+    // this는 기본적으로 전역 객체(window)를 가리킴
+    // 전역 객체에는 capacity 속성이 없으므로 undefined가 출력
+    printCapacity();
+
+    // / myCup 객체에 pc라는 속성을 추가하고, 그 값으로 printCapacity 함수를 할당
+    myCup.pc = printCapacity;
+
+    //myCup에서 function printCapacity()를 pc라는 참조변수로 들고 있으므로
+    //pc를 사용하게 되면 이 함수를 실행하게 되고 해당 함수의
+    // this.capacity는 myCup이 들고있는 capacity 값을 의미하게 되므로 200이 출력됨
+    //printCapacity 함수 내의 this는 myCup 객체를 가리키게됨
+    // 이때 this.capacity는 myCup.capacity를 참조하게 되어 200이 출력
+    myCup.pc();
+
+    // let yourCup = new Cup(1000);
+    // yourCup.pc(); // 객체에 pc 속성이 없으므로 에러
+
+    //myCup을 프로토타입으로 하는 새로운 객체 hisCup을 만듬
+    //즉, hisCup은 myCup을 상속받게 되어 myCup에 있는 속성과 메서드들을 사용할 수 있음
+    // 하지만 hisCup 자체에는 속성이나 메서드가 없고, 상속된 프로토타입 객체로부터 값을 참조하고 있음
+    let hisCup = Object.create(myCup);
+
+    //hisCup.pc() 호출 시 this는 hisCup을 가리키지만, 
+    //hisCup에는 capacity 속성이 없으므로 프로토타입인 myCup에서 capacity를 찾아 200을 출력
+    hisCup.pc();
+
+    console.log(Object.getPrototypeOf(hisCup));
+    
+    myCup.color = "RED";
+    
+    // 프로토타입에 추가된 내용은 해당 프로토타입을 참조하고 있기 때문에
+    // 값을 가져올 수 있음
+    console.log(hisCup.color); 
+
+    hisCup.price = 25000;
+
+    // 하지만 상위 프로토타입인 myCup에서는 hisCup에 새롭게 추가된 price 속성을 알지 못함
+    // 즉, 프로토타입 체인은 상위 객체로만 동작하고, 역방향으로는 동작하지 않음
+    console.log(myCup.price);
+    
+    
+
+  </script>
+</html>

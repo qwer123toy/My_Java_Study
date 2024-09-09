@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="student">
+        <div class="name"></div>
+        <div class="korean"></div>
+        <div class="english"></div>
+        <div class="math"></div>
+      </div>
+      <div class="student">
+        <div class="name"></div>
+        <div class="korean"></div>
+        <div class="english"></div>
+        <div class="math"></div>
+      </div>
+      <div class="student">
+        <div class="name"></div>
+        <div class="korean"></div>
+        <div class="english"></div>
+        <div class="math"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  class Student {
+    name;
+    korean;
+    english;
+    math;
+
+    constructor(name, korean, english, math) {
+      this.name = name;
+      this.korean = korean;
+      this.english = english;
+      this.math = math;
+    }
+  }
+
+  let s1 = new Student("둘리", 100, 90, 80);
+  let s2 = new Student("도우너", 80, 70, 60);
+  let s3 = new Student("또치", 60, 50, 40);
+
+  const stuAll = [s1, s2, s3];
+
+  let allName = window.document.querySelectorAll(".name");
+  let arrName = [...allName];
+
+
+  
+  let allKorean = window.document.querySelectorAll(".korean");
+  let arrKor = [...allKorean];
+  let allEng = window.document.querySelectorAll(".english");
+  let arrEng = [...allEng];
+  let allMath = window.document.querySelectorAll(".math");
+  let arrMath = [...allMath];
+
+  for (let i = 0; i < arrName.length; i++) {
+    arrName[i].innerHTML = stuAll[i].name;
+    arrKor[i].innerHTML = stuAll[i].korean;
+    arrEng[i].innerHTML = stuAll[i].english;
+    arrMath[i].innerHTML = stuAll[i].math;
+  }
+
+  console.log(arr);
+
+  /*
+        1. 다음과 같은 속성을 가지는 학생
+            을 class 또는 funcion 생성자로 정의하고
+        2. 각각 인스턴스로 생성합니다.
+        3. 학생의 배열을 생성합니다.
+        4. 위의 HTML 요소에 학생의 정보를 출력합니다.
+        
+        학생
+        이름    국어    영어    수학
+        둘리    100     90      80
+        도우너  80      70      60
+        또치    60      50      40
+    */
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+  </head>
+  <body></body>
+  <script>
+    const myArr = [10, true, null, {}, "str"];
+    console.log(myArr);
+
+    const yourArr = [10, 20, 30, 40, 50];
+
+    for (let index = 0; index < yourArr.length; index++) {
+      console.log(yourArr[index]);
+    }
+
+    //for-each문과 동일한 구성
+    for(const item of yourArr){
+      console.log(item);
+      
+    }
+
+    // 배열을 스택처럼 활용
+    // 가장 뒷쪽에 있는 원소를 제거하면서 반환함
+    console.log(yourArr.pop());
+    console.log(yourArr.pop());
+    console.log(yourArr.pop());
+    console.log(yourArr.pop());
+    console.log(yourArr.pop());
+    console.log("모든 원소 제거 후", yourArr.length);
+
+    // 배열을 큐처럼 활용
+    // 가장 앞쪽에 있는 원소를 제거하면서 반환함
+    // console.log(yourArr.shift());
+    // console.log(yourArr.shift());
+    // console.log(yourArr.shift());
+    // console.log(yourArr.shift());
+    // console.log(yourArr.shift());
+    // console.log("모든 원소 제거 후", yourArr.length);
+    
+    
+  </script>
+</html>

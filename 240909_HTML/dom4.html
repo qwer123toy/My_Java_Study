@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="list"></ul>
+    </div>
+  </body>
+  <script>
+    let container = document.querySelector(".container");
+    let list = document.querySelector(".list");
+
+    let str = "<li>append는 문자열 삽입이 가능합니다</li>";
+    let domParser = new DOMParser();
+    let listItemElem = domParser.parseFromString(str, "text/html").firstChild.querySelector("li");
+
+    //상수값을 받아 위치를 결정함
+    // beforeend : list 요소의 마지막 자식 요소 뒤에 삽입합니다.
+    // beforebegin : list 요소 바로 앞에 삽입합니다.
+    // afterbegin : list 요소의 첫 번째 자식 요소 앞에 삽입합니다.
+    // afterend : list 요소 바로 뒤에 삽입합니다.
+    list.insertAdjacentText("beforeend", "텍스트를 추가합니다");
+    list.insertAdjacentText("beforeend", "<li>텍스트를 추가합니다</li>");
+    
+    //추가된 객체의 반환이 일어남
+    list.insertAdjacentElement("beforeend", listItemElem);
+    
+
+
+    //실수로 문자열을 넣었을 때 적용이 되지 않음
+    // let result =  list.appendChild(str);
+
+    //참조된 객체요소를 반환
+    // let result =  list.appendChild(listItemElem);
+    // result.innerHTML = "삽입된 요소를 반환";
+
+    // list.append(document.importNode(listItemElem, true));
+    // list.append(document.importNode(listItemElem, true));
+    // list.append(document.importNode(listItemElem, true));
+    // list.append(document.importNode(listItemElem, true));
+  </script>
+</html>

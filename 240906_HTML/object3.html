@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 객체 생성
+    let person = {
+      firstName: "John",
+      lastName: "Doe",
+
+      //객체 안의 메서드
+      // 객체가 들고있는 변수값(필드값)을 반환 해주는 함수
+      funcfullName() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+
+      // 이 속성에 접근했을 때 값을 반환을 해줄 수 있는 형태로 만들어줌
+      // 즉 메서드를 호출하는 것이 아닌 값에 직접적으로 접근
+      get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+
+      // getter와 같은 이름도 사용 가능
+      // 전달받을 파라미터 값을 지정해둔 뒤
+      set fullName(nameStr) {
+        // console.log("값 전달 확인", nameStr);
+        let nameArr = nameStr.split(" ");
+        this.firstName = nameArr[0];
+        this.lastName = nameArr[1];
+      },
+    };
+
+    console.log(person.funcfullName());
+    console.log(person.fullName);
+    // person.fullName = "대입연산을 하면"; // 대입 연산 시 setter의 파라미터 값으로 전달됨
+    person.fullName = "재민 이";
+    console.log(person.fullName);
+  </script>
+</html>

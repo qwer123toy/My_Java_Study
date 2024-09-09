@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    
+</body>
+
+<script>
+    let jsonString = localStorage.getItem("object");
+    // let jsonString = sessionStorage.getItem("object");
+
+    console.log(jsonString);
+    
+    let obj = JSON.parse(jsonString);
+
+    console.log(obj);
+</script>
+</html>

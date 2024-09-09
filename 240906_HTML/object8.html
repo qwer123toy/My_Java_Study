@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    class Person {
+      // #을 붙이면 private을 의미함
+      #name;
+      #age;
+
+      constructor(name, age) {
+        this.#name = name;
+        this.#age = age;
+      }
+
+      get Name(){
+        return this.#name;
+      }
+    }
+
+    let myObj = new Person("둘리", 15);
+    // console.log(myObj.name);// private이기 때문에 접근 불가능
+    
+    //getter를 사용하여 접근했기 때문에 호출 가능
+    console.log(myObj.Name);
+    
+    class Student extends Person{
+      #score;
+      constructor(name, age, score){
+        super(name,age);
+        this.#score = score;
+      }
+
+      get score(){
+        return this.#score;
+      }
+
+      set score(score){
+        this.#score = score;
+      }
+    }
+
+    let myStudent = new Student("도우너", 20, 100);
+    console.log(myStudent.name);// private이라 접근 불가능
+    console.log(myStudent.score);
+    
+    
+
+    
+  </script>
+</html>

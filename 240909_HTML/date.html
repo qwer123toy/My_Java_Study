@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <p id="date"></p>
+  </body>
+  <script>
+    // let date = new Date(2022, 0, 1, 12, 33, 44);
+
+    let date = new Date(2022, 0, 1);
+    document.getElementById("date").innerHTML = date;
+
+    let oneDay = 24 * 60 * 60 * 1000; // 하루 ms 단위 값
+
+    date.setTime(date.getTime() + oneDay);
+
+    // document.querySelector("#date").innerHTML = date;
+    
+    let localStr = date.toLocaleString();
+    document.querySelector("#date").innerHTML = localStr;
+
+
+  </script>
+</html>

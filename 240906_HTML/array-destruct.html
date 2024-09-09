@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+  </head>
+  <body></body>
+  <script>
+    const arr = [10, 20, 30];
+
+    //함수를 호출하려면 기본적으로 파라미터가 3개여야함
+    function sum(a, b, c) {
+      console.log(a + b + c);
+    }
+
+    
+    //객체가 하나이므로 a+ undefined + undefined가 됨
+    // sum(arr);
+
+    // ...을 사용하면 배열의 원소들이 순서에 맞춰 파라미터에 다 들어감
+    //
+    sum(...arr);
+
+    // let[a,b, ...rest] = arr;
+    // console.log(a);
+    // console.log(b);
+    // console.log(rest);
+
+    // let[, , c, , d] = arr;
+    // console.log(c,d);
+  </script>
+</html>

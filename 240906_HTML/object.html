@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const myObj = {};//인스턴스 생성
+    myObj.name = "둘리"; //속성 정의(추가)
+    myObj.age = 15;
+
+    console.log(typeof myObj);
+    console.log(myObj.name);
+    console.log(myObj.age);
+    
+    myObj.score = 100; // 계속 속성을 추가해줄 수 있음
+
+    myObj["na"+"me"] = "도우너"; //대괄호를 이용하여 속성값을 넣어줄 수 있음
+
+    console.log(myObj);
+    
+    myObj.hello = function () { //속성에 함수도 추가할 수 있음
+        console.log("하이");
+        
+    }
+    myObj.hello();
+
+    delete myObj.hello; //특정 속성 삭제를 delete를 통해 가능
+
+    myObj.hello();
+    
+    
+</script>
+</html>

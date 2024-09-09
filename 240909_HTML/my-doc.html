@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="students.js"></script>
+  </head>
+  <body>
+    <div class="container"></div>
+    <template id="template">
+      <div class="student">
+        <h2></h2>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </template>
+  </body>
+  <script>
+    const container = document.querySelector(".container");
+
+    const template = document.querySelector("#template");
+
+    data.map(
+        (student) => {
+            (student.sum = student.kor + student.eng + student.math)
+             return student;
+    }
+    ).filter((student) => {
+        return student.sum >= 270 
+    }).forEach((student) => {
+      const clone = document.importNode(template.content, true);
+
+      clone.querySelector("h2").textContent = student.name;
+      clone.querySelector("p:nth-child(2)").textContent = student.kor;
+      clone.querySelector("p:nth-child(3)").textContent = student.eng;
+      clone.querySelector("p:nth-child(4)").textContent = student.math;
+      clone.querySelector("p:nth-child(5)").textContent = student.sum;
+
+      container.appendChild(clone);
+    });
+
+    // let clone = document.importNode(template.content, true);
+
+    // clone.querySelector("h2").textContent = "제목";
+
+    // container.appendChild(clone);
+  </script>
+</html>

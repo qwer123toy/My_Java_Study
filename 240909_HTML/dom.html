@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <div class="container">
+        비어있는 블럭 요소
+    </div>
+</body>
+<script>
+
+    let container = document.querySelector(".container");
+    // container.innerText = "<h1>헤딩요소</h1>"; // 텍스트로만 변경
+    // container.innerHTML = "<h1>헤딩요소</h1><>misatake~"; // HTML 태그를 포함한 텍스트로 변경
+    
+    // 요소를 들고 있는 하나의 객체가 생성됨
+    // 아직 문서에 포함되지는 않음
+    let createHeading = document.createElement("h1");
+
+    // 요소를 추가
+    createHeading.innerText = "헤딩요소";
+
+    // 요소를 블럭에 추가
+    // 하지만 객체인 것만 표현되고 올바르게 표현이 되지 않음
+    // container.innerHTML =createHeading;
+
+
+    // outerHTML을 통해 블럭에 요소를 추가
+    container.innerHTML =createHeading.outerHTML;
+
+    
+</script>
+</html>

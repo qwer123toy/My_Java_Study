@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script>
+    
+    let childerenArr = [...document.querySelector(".list").children];
+
+
+    // 전체 원소를 순환해야하는 경우 
+    // for of나 index 보다 전체 순환하기를 더 많이 씀
+    // 함수의 callback을 위해 foreach 문을 사용
+    // childerenArr.forEach(function (elem) {
+    //     console.log(elem.innerHTML);
+    // });
+
+
+    // arrow 함수를 쓰기도 함
+    // childerenArr.forEach( (elem) => {
+    //     console.log(elem.innerHTML);
+    // });
+
+
+    //각각의 원소들이 전달되고 반환된 값이 true인 원소만을
+    // 모아서 새로운 배열로 만들어줌
+    let result = childerenArr.filter( (elem) => {
+        return elem.innerHTML % 2 == 0;
+    });
+    console.log(result.length);
+    
+</script>
+</html>

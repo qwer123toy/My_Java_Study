@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    function Book(title) {
+      this.title = title;
+    }
+
+    // Object.create(Book)를 사용하면, Book은 함수(생성자 함수)가 아닌 일반 객체로 취급됨
+    // Book은 객체가 아니라 생성자 함수이므로, 이를 프로토타입으로 한 객체를 생성해도
+    // title 속성 설정이 제대로 되지 않음
+    // let java = Object.create(Book);
+    // java.title = "자바"; // 이렇게 수동으로 속성을 추가해야 함
+
+    // 대신 new 키워드를 사용하면 Book 생성자 함수가 실행되며,
+    // this가 새로 생성된 객체를 가리키게 됨
+    // 생성자 함수 내부에서 전달된 title 값이 자동으로 this.title에 할당됨
+    // 이 방식이 더 효율적이며, 생성자 함수의 목적에 맞게 동작함
+    let java = new Book("자바");
+
+    console.log(java);
+
+    let python = Object.create(Book.prototype);
+
+    python.title = "파이썬";
+
+    console.log(python);
+
+    // 책의 prototype은 두 자바책과 파이썬 책을 공유하는 하나의 프로토타입임
+    // prototype에도 속성을 정의할 수 있음
+    Book.prototype.printTitle = function () {
+      console.log(this.title);
+    };
+
+    //프로토타입에 정의된 함수는 모두 사용 가능
+    python.printTitle();
+
+    // 잘못된 접근: 인스턴스에는 .prototype 속성이 존재하지 않음
+    // 대신 프로토타입은 생성자 함수에 연결되어 있음
+    console.log(java.prototype);
+
+    // 인스턴스의 프로토타입 객체에 접근하는 올바른 방법은 Object.getPrototypeOf()를 사용하여 접근
+    console.log(Object.getPrototypeOf(java));
+    console.log(Object.getPrototypeOf(python));
+
+    // 프로토타입 객체에 price 속성을 추가함
+    // 이렇게 하면 Book의 모든 인스턴스는 프로토타입 체인을 통해 price 속성에 접근 가능
+    Object.getPrototypeOf(java).price = 10000;
+
+    //프로토타입을 상속받고 있는 python도 price에 접근이 가능하여 출력해줌
+    console.log(python.price);
+
+  </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+
+    function Human(name, age) {
+      this.name = name;
+      this.age = age;
+
+      this.hello = function(){
+          console.log("안녕");
+          
+      }
+    }
+
+    let myObj = new Human("둘리", 15);
+    let yourObj = new Human("도우너", 20);
+
+    console.log(myObj);
+    console.log(yourObj);
+    
+    console.log(typeof myObj);
+    console.log(myObj instanceof Human);
+    
+    myObj.hello();
+
+    let student = new Human("학생1", 15);
+
+    student.score = 100;//새로운 속성을 추가
+
+    student.hello(); 
+    console.log(myObj.score);// 정의되어있지 않음
+    
+    console.log(student.name);
+    console.log(student.age);
+    console.log(student.score);
+    
+    
+  </script>
+</html>
